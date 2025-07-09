@@ -55,7 +55,7 @@ app.get("/Sos",(req,res)=>{
     const client = new twilio(process.env.TWILIO_SID , process.env.TWILIO_AUTH_TOKEN)
 
     return client.messages
-    .create({body: `name: ${Nameofperson},email: ${emailofperson},contact: ${numberofperson},subject: ${subjectofperson},message: ${messageofperson}`, from:'+13613210773' , to: '+917200143891'})
+    .create({body: `name: ${Nameofperson},email: ${emailofperson},contact: ${numberofperson},subject: ${subjectofperson},message: ${messageofperson}`, from:'+13613210773' , to: '+7395907462'})
     .then(message => {
 
         console.log(message, "message sent");
