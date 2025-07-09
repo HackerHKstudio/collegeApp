@@ -8,6 +8,7 @@ var session = require('express-session')
 var passport = require("passport")
 const passportLocalMongoose = require('passport-local-mongoose');
 const dotenv = require('dotenv')
+dotenv.config()
 
 
 
@@ -20,7 +21,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname+"/public"));
 
-mongoose.connect("mongodb+srv://hkstudio922:Hkstudio%402119@cluster0.siqlmc9.mongodb.net/college?retryWrites=true&w=majority");
+mongoose.connect(process.env.MONGO_DB);
 
 
 
@@ -29,7 +30,6 @@ mongoose.connect("mongodb+srv://hkstudio922:Hkstudio%402119@cluster0.siqlmc9.mon
 // ------------------MESSSAGE SEND START------------------------------
 
 const twilio = require('twilio')
-dotenv.config()
 
 app.get("/Sos",(req,res)=>{
 
